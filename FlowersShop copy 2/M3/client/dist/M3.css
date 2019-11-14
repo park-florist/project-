@@ -15,6 +15,7 @@ img {
 
   color: #555;
 }
+
 .h3 {
   color: #555555;
   margin-top: 20px;
@@ -88,7 +89,7 @@ p {
   margin: 0;
   text-align: center;
   position: relative;
-  z-index: 999;
+  z-index: 994;
 }
 
 .nav-itemWrapper {
@@ -144,4 +145,10 @@ img.companylogo-img {
 .icon img {
   max-height: auto;
   max-width: 70px;
+}
+div.ui-menu li {
+  list-style: none;
+  background-image: none;
+  background-repeat: none;
+  background-position: 0;
 }
