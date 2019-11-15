@@ -48,7 +48,7 @@ this["require"] =
   \******************************/
 /***/ (function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -67,147 +67,164 @@ this["require"] =
 	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	
 	    _this.state = {
-	      dataItem: []
+	      id: '',
+	      name: '',
+	      price1: '',
+	      price2: '',
+	      price3: ''
 	      // productName: '',
 	    };
 	
 	    // this.getInfo = this.getInfo.bind(this);
-	    _this.updateState = _this.updateState.bind(_this);
+	    // this.updateState = this.updateState.bind(this);
 	    return _this;
 	  }
+	  // updateState(data) {
+	  //   this.setState({
+	  //     dataItem: data
+	  //   });
+	
+	  // }
+	
 	
 	  _createClass(App, [{
-	    key: "updateState",
-	    value: function updateState(data) {
-	      this.setState({
-	        dataItem: data
-	      });
-	    }
-	  }, {
-	    key: "componentDidMount",
+	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      this.getInfo();
-	    }
-	    ///////////
-	
-	  }, {
-	    key: "getInfo",
-	    value: function getInfo() {
 	      var that = this;
+	      // this.getInfo();
+	      var path = window.location.href;
+	      console.log(path);
+	      var price1Id = path.substring(path.indexOf("=") + 1);
+	      if (price1Id === "") {
+	        price1Id = 1;
+	      }
 	      $.ajax({
 	        type: "GET",
-	        url: "/items",
+	        url: "/id/?id=" + price1Id,
 	        success: function success(data) {
-	          that.updateState(data);
 	          console.log(data);
-	          console.log("productdata from getInfo", that.state.dataItem);
+	          that.setState({
+	            id: data.id,
+	            name: data.name,
+	            price1: data.price1,
+	            price2: data.price2,
+	            price3: data.price3
+	
+	          });
+	          console.log(that.state);
 	        },
 	        error: function error(_request, _status, _error) {
 	          console.log(_error);
 	        }
 	      });
 	    }
+	    ///////////
+	    // getInfo() {
+	    // var that = this;
+	
+	
+	    // }
+	
 	  }, {
-	    key: "changeType",
+	    key: 'changeType',
 	    value: function changeType(e) {
 	      e.target.type = "date";
 	    }
 	  }, {
-	    key: "changeingone",
+	    key: 'changeingone',
 	    value: function changeingone(e) {
-	      console.log(this.state.dataItem[0].name);
+	      console.log(this.state.name);
 	
 	      e.target.style = "box-shadow: inset 2px 2px #548f35, inset -2px -2px #548f35;";
 	      $("#descrip").text("Bouquet will be delivered approximately as pictured.");
-	      $("#h4").text("$" + this.state.dataItem[0].price1);
+	      $("#h4").text("$" + this.state.price1);
 	    }
 	  }, {
-	    key: "changeingtwo",
+	    key: 'changeingtwo',
 	    value: function changeingtwo() {
 	      $("#descrip").text("Additional flowers will be added to enhance the bouquet.");
-	      $("#h4").text("$" + this.state.dataItem[0].price2);
+	      $("#h4").text("$" + this.state.price2);
 	    }
 	  }, {
-	    key: "changeingthree",
+	    key: 'changeingthree',
 	    value: function changeingthree() {
-	      $("#h4").text("$" + this.state.dataItem[0].price3);
+	      $("#h4").text("$" + this.state.price3);
 	      $("#descrip").text("We will add more blooms and select the highest quality flowers we offer in this style.");
 	    }
 	  }, {
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
-	      var myData = [];
 	
-	      if (this.state.dataItem.length !== 0) {
-	        myData = this.state.dataItem;
-	      }
+	      // if(this.state. !==  0){
+	      //  var  myData =this.state;
+	      // }
 	      return React.createElement(
-	        "div",
-	        { "class": "s" },
+	        'div',
+	        { className: 's' },
 	        React.createElement(
-	          "h1",
-	          { name: "name" },
-	          myData[0] ? myData[0].name : "sample product"
+	          'h1',
+	          { name: 'name' },
+	          this.state.name
 	        ),
-	        React.createElement("br", null),
+	        React.createElement('br', null),
 	        React.createElement(
-	          "div",
+	          'div',
 	          null,
 	          React.createElement(
-	            "h4",
-	            { id: "h4" },
-	            "$",
-	            myData[0] ? myData[0].price1 : ""
+	            'h4',
+	            { id: 'h4' },
+	            '$',
+	            this.state.price1
 	          )
 	        ),
 	        React.createElement(
-	          "div",
-	          { className: "devdes" },
+	          'div',
+	          { className: 'devdes' },
 	          React.createElement(
-	            "button",
-	            { className: "btn", name: " price1", id: "standard", onClick: this.changeingone.bind(this) },
-	            "Standard "
+	            'button',
+	            { className: 'btn', name: ' price1', id: 'standard', onClick: this.changeingone.bind(this) },
+	            'Standard '
 	          ),
 	          React.createElement(
-	            "button",
-	            { className: "btntwo", name: " price2", id: "deluxe", onClick: this.changeingtwo.bind(this) },
-	            "Deluxe   "
+	            'button',
+	            { className: 'btntwo', name: ' price2', id: 'deluxe', onClick: this.changeingtwo.bind(this) },
+	            'Deluxe   '
 	          ),
 	          React.createElement(
-	            "button",
-	            { className: "btntwo", name: " price3", id: "premium", onClick: this.changeingthree.bind(this) },
-	            "Premium"
+	            'button',
+	            { className: 'btntwo', name: ' price3', id: 'premium', onClick: this.changeingthree.bind(this) },
+	            'Premium'
 	          )
 	        ),
 	        React.createElement(
-	          "div",
-	          { "class": "devdes" },
+	          'div',
+	          { className: 'devdes' },
 	          React.createElement(
-	            "div",
-	            { "class": "up-sell", id: "descrip" },
-	            "Bouquet will be delivered approximately as pictured."
+	            'div',
+	            { className: 'up-sell', id: 'descrip' },
+	            'Bouquet will be delivered approximately as pictured.'
 	          ),
-	          React.createElement("br", null),
+	          React.createElement('br', null),
 	          React.createElement(
-	            "div",
-	            { "class": "up-selll" },
-	            "Add a zip code for delivery details"
+	            'div',
+	            { className: 'up-selll' },
+	            'Add a zip code for delivery details'
 	          )
 	        ),
-	        React.createElement("br", null),
-	        React.createElement("br", null),
+	        React.createElement('br', null),
+	        React.createElement('br', null),
 	        React.createElement(
-	          "div",
-	          { "class": "dates" },
-	          React.createElement("input", { "class": "inputs", placeholder: "CHOOSE A DELIVERY DATE", type: "text", onFocus: this.changeType.bind(this) })
+	          'div',
+	          { className: 'dates' },
+	          React.createElement('input', { className: 'inputs', placeholder: 'CHOOSE A DELIVERY DATE', type: 'text', onFocus: this.changeType.bind(this) })
 	        ),
 	        React.createElement(
-	          "div",
-	          { "class": "dates" },
+	          'div',
+	          { className: 'dates' },
 	          React.createElement(
-	            "button",
-	            { "class": "colorbtn" },
-	            "Order Now"
+	            'button',
+	            { className: 'colorbtn' },
+	            'Order Now'
 	          )
 	        )
 	      );

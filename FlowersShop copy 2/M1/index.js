@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   console.log("lestining from 4001");
 // });
 
-const Item = require("../database/pic").Item;
+const Item = require("./pic").Item;
 
 app.get('/items', function (req, res) {
   Item.find({})
