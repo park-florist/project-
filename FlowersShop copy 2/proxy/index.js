@@ -1,20 +1,29 @@
 const express = require("express");
-// var sys = require("sys");
-// var url = require("url");
-// var http = require("http");
-// var request = require("request");
-// var httpProxy = require("http-proxy");
-// var apiProxy = httpProxy.createProxyServer();
-// var apiProxy = httpProxy.createProxyServer();
-// var server1 = require("../M1/server.js");
+var request = require("request");
+const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 var app = express();
-
-// app.use((req, res, next) => {
-//   // res.handler('Access-Conrtoll-Aloow-Origin');
-//   next();
-// });
+app.use(bodyParser.json({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 let port = 7000;
 app.use(express.static(__dirname + "/public"));
+
+const Item = require("./public/data").Item;
+app.get("/items", (req, res) => {
+  console.log("//// hi");
+  
+//   Item.find({})
+//    .sort({ date: -1 })
+   console.log("items inside the.Get server");
+//   request("http://localhost:4005/", function(err, response, body) {
+    Item.find({}).exec((err,content) => { 
+        if(err){
+          console.log(err);
+          req.send()
+        }
+        res.json(content)});
+  });
+
 
 app.listen(port, () => console.log("proxy is listening on 7000"));
 

@@ -115,22 +115,22 @@ this["require"] =
 	  }, {
 	    key: "changeingone",
 	    value: function changeingone(e) {
-	      console.log(this.state.dataItem[9].name);
+	      console.log(this.state.dataItem[0].name);
 	
 	      e.target.style = "box-shadow: inset 2px 2px #548f35, inset -2px -2px #548f35;";
 	      $("#descrip").text("Bouquet will be delivered approximately as pictured.");
-	      $("#h4").text("$" + this.state.dataItem[9].price1);
+	      $("#h4").text("$" + this.state.dataItem[0].price1);
 	    }
 	  }, {
 	    key: "changeingtwo",
 	    value: function changeingtwo() {
 	      $("#descrip").text("Additional flowers will be added to enhance the bouquet.");
-	      $("#h4").text("$" + this.state.dataItem[9].price2);
+	      $("#h4").text("$" + this.state.dataItem[0].price2);
 	    }
 	  }, {
 	    key: "changeingthree",
 	    value: function changeingthree() {
-	      $("#h4").text("$" + this.state.dataItem[9].price3);
+	      $("#h4").text("$" + this.state.dataItem[0].price3);
 	      $("#descrip").text("We will add more blooms and select the highest quality flowers we offer in this style.");
 	    }
 	  }, {
@@ -147,7 +147,7 @@ this["require"] =
 	        React.createElement(
 	          "h1",
 	          { name: "name" },
-	          myData[9] ? myData[9].name : "sample product"
+	          myData[0] ? myData[0].name : "sample product"
 	        ),
 	        React.createElement("br", null),
 	        React.createElement(
@@ -157,7 +157,7 @@ this["require"] =
 	            "h4",
 	            { id: "h4" },
 	            "$",
-	            myData[9] ? myData[9].price1 : ""
+	            myData[0] ? myData[0].price1 : ""
 	          )
 	        ),
 	        React.createElement(

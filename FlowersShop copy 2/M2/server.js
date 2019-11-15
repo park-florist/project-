@@ -17,7 +17,13 @@ app.get("/items", (req, res) => {
 });
 //var proxy = httpProxy.createProxyServer(options);
 let port = process.env.PORT || 4005;
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+ });
+ 
 app.listen(port, function() {
- console.log("hi from 4002");
- console.log("lestining from 4002");
+ console.log("hi from 4005");
+ console.log("lestining from 4005");
 });
