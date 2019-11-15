@@ -15,27 +15,29 @@ db.once("connected", function() {
  console.log("we're connected db!");
  
 });
-let FlowerSchema = Schema ({
-  name:{
-      type : String,
-      required : true
-  },
-  price1:{
-      type : Number,
-      required : true
-  },
-  price2:{
-      type : Number,
-      required : true
-  },
-  price3:{
-      type : Number,
-      required : true
-  },
-  productInformation:{
-      type : String,
-      required : true
-  }
+let FlowerSchema =  Schema({
+    id:{
+        type : Number,
+    },
+    img:{
+        type : String,
+    },
+    name:{
+        type : String,
+    },
+    price1:{
+        type : Number,
+    },
+    price2:{
+        type : Number,
+    },
+    price3:{
+        type : Number,
+    },
+    productInformation:{
+        type : String,
+    }
+  
 })
 
 const Item = mongoose.model("Item", FlowerSchema);

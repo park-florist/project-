@@ -3,69 +3,89 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataItem: []
+      id:'',
+      name:'',
+      price1:'',
+      price2:'',
+      price3:''
       // productName: '',
     };
     
     // this.getInfo = this.getInfo.bind(this);
-    this.updateState = this.updateState.bind(this);
+    // this.updateState = this.updateState.bind(this);
   }
-  updateState(data) {
-    this.setState({
-      dataItem: data
-    });
+  // updateState(data) {
+  //   this.setState({
+  //     dataItem: data
+  //   });
     
-  }
+  // }
   componentDidMount() {
-    this.getInfo();
-  }
-  ///////////
-  getInfo() {
     var that = this;
+    // this.getInfo();
+    var path = window.location.href;
+    console.log(path);
+    var price1Id = path.substring(path.indexOf("=")+1);
+    if(price1Id === "") {
+      price1Id = 1;
+    }
     $.ajax({
       type: "GET",
-      url: "/items",
+      url: "/id/?id=" + price1Id,
       success: function(data) {
-        that.updateState(data);
         console.log(data);
-        console.log("productdata from getInfo",that.state.dataItem);
+        that.setState({
+          id:data.id,
+        name:data.name,
+        price1:data.price1,
+        price2:data.price2,
+        price3:data.price3
+          
+        });
+        console.log(that.state)
+     
       },
       error: function(_request, _status, error) {
         console.log(error);
       }
     });
-    
   }
+  ///////////
+  // getInfo() {
+    // var that = this;
+    
+    
+  // }
     changeType(e){
       e.target.type="date";
     }
     changeingone(e){
-      console.log(this.state.dataItem[0].name)
+      console.log(this.state.name)
  
       e.target.style="box-shadow: inset 2px 2px #548f35, inset -2px -2px #548f35;"
       $("#descrip").text("Bouquet will be delivered approximately as pictured.");
-      $("#h4").text("$"+this.state.dataItem[0].price1)
+      $("#h4").text("$"+this.state.price1)
     }
     changeingtwo(){
       $("#descrip").text("Additional flowers will be added to enhance the bouquet.")
-      $("#h4").text("$"+this.state.dataItem[0].price2)
+      $("#h4").text("$"+this.state.price2)
     }
     changeingthree(){
-      $("#h4").text("$"+this.state.dataItem[0].price3)
+      $("#h4").text("$"+this.state.price3)
       $("#descrip").text("We will add more blooms and select the highest quality flowers we offer in this style.")
     }
   render () {
-    var myData = [];
     
-    if(this.state.dataItem.length !==  0){
-      myData =this.state.dataItem;
-    }
+    
+    // if(this.state. !==  0){
+    //  var  myData =this.state;
+    // }
     return (
-  <div class = "s"> 
-   <h1 name = "name" >{(myData[0])?myData[0].name:"sample product"}</h1>
+  <div className = "s"> 
+   <h1 name = "name" >{this.state.name}</h1>
     <br/>
     <div  >
-    <h4  id="h4">${(myData[0])?myData[0].price1:""}</h4>
+    <h4  id="h4">${this.state.price1}</h4>
 
     </div>
     <div className="devdes">
@@ -76,27 +96,27 @@ class App extends React.Component {
     </div>
    
 
-     <div class="devdes">
+     <div className="devdes">
    
     
       {/* <div style={{padding:15,textAlign:"center",color:"#8E8E8E"}}> */}
-      <div class="up-sell" id = "descrip">Bouquet will be delivered approximately as pictured.</div>
+      <div className="up-sell" id = "descrip">Bouquet will be delivered approximately as pictured.</div>
       <br></br>
       
-      <div class = "up-selll">Add a zip code for delivery details</div>
+      <div className = "up-selll">Add a zip code for delivery details</div>
       
       
     </div> 
    <br></br>
    <br></br>
-    <div class ="dates">
+    <div className ="dates">
    
-    <input class="inputs" placeholder="CHOOSE A DELIVERY DATE" type="text" onFocus={this.changeType.bind(this)} />
+    <input className="inputs" placeholder="CHOOSE A DELIVERY DATE" type="text" onFocus={this.changeType.bind(this)} />
   
   </div>
-  <div class ="dates">
+  <div className ="dates">
   
-  <button class="colorbtn" >Order Now</button>
+  <button className="colorbtn" >Order Now</button>
   </div >
   
   

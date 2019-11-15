@@ -69,7 +69,80 @@
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import React, { Component } from 'react';
+	// import ReactDOM from 'react-dom';
+	// import $ from 'jquery';
+	
+	// class Flowers4001 extends React.Component {
+	//   constructor(props) {
+	//     super(props);
+	//     this.state = {
+	//       id: "",
+	//       img : ""
+	//     }
+	//   }
+	
+	//   // retriveData() {
+	//   //   var that = this;
+	//   //   $.ajax({
+	//   //     type: "GET",
+	//   //     url: "/items",
+	//   //     success: function(data) {
+	//   //       console.log("dvdvdvdv");
+	//   //       that.setState({
+	//   //         flowerData : data[0]
+	//   //       });
+	//   //     },
+	//   //     error: function(request, status, error) {
+	//   //       console.log(error,"hi im the error");
+	//   //     }
+	//   //   });
+	//   // }
+	
+	//   componentDidMount() {
+	//     var that = this;
+	
+	//     var path = window.location.href;
+	//     var imgId = path.substring(path.indexOf("="+1));
+	//     if(imgId === " ") {
+	//       imgId = 1;
+	//     }
+	
+	//     console.log(imgId);
+	
+	//     $.ajax({
+	//       type: "GET",
+	//       url: "/items",
+	//       data:{id:imgId},
+	//       success: function(data) {
+	//         console.log("dvdvdvdv");
+	//         console.log(data[0].img);
+	
+	//         that.setState({
+	//           img : data[0].img,
+	//           id: data.id
+	//         });
+	//       },
+	//       error: function(request, status, error) {
+	//         console.log(error,"hi im the error");
+	//       }
+	//     });
+	
+	//   }
+	
+	
+	//   render() {
+	//     return (
+	//       <div>
+	//         <h1 class = "h1">helloo agaaiinn 4001!!</h1>
+	//          <img id="active-image_gallery-image" src={this.state.img}/>
+	//         </div>
+	
+	//     );
+	//   }
+	// }
+	// ReactDOM.render(<Flowers4001 />, document.getElementById("Flowers4001"));
+	
 	
 	var Flowers4001 = function (_React$Component) {
 	  _inherits(Flowers4001, _React$Component);
@@ -85,7 +158,6 @@
 	    };
 	    return _this;
 	  }
-	
 	  // retriveData() {
 	  //   var that = this;
 	  //   $.ajax({
@@ -103,29 +175,26 @@
 	  //   });
 	  // }
 	
+	
 	  _createClass(Flowers4001, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      var that = this;
-	
 	      var path = window.location.href;
-	      var imgId = path.substring(path.indexOf("=" + 1));
-	      if (imgId === " ") {
+	      console.log(path);
+	      var imgId = path.substring(path.indexOf("=") + 1);
+	      if (imgId === "") {
 	        imgId = 1;
 	      }
-	
 	      console.log(imgId);
-	
 	      _jquery2.default.ajax({
 	        type: "GET",
-	        url: "/items",
-	        data: { id: imgId },
+	        url: "/id/?id=" + imgId,
 	        success: function success(data) {
 	          console.log("dvdvdvdv");
-	          console.log(data[0].img);
-	
+	          console.log(data);
 	          that.setState({
-	            img: data[0].img,
+	            img: data.img,
 	            id: data.id
 	          });
 	        },
@@ -137,6 +206,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      console.log("hiiii");
 	      return _react2.default.createElement(
 	        'div',
 	        null,
