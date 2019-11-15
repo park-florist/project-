@@ -131,7 +131,52 @@ class Flowers4001 extends React.Component {
    console.log("hiiii")
    return (
      <div>
-       <h1>helloo agaaiinn 4001!!</h1>
+
+
+       
+       <section id="#header">
+          <div className="row header-innerContainer ">
+            <div className=" clearfix company-logo companylogo-img col-xs-12 col-sm-4 col-md-4">
+              <img src="https://res.cloudinary.com/bloomnation/c_fit,f_auto,h_1000,q_auto,w_1000/v1/vendor/6263/profile/p/a/parkflorist-logo_2.png" />
+            </div>
+          </div>{" "}
+        </section>
+        <div className="displayUl header-nav col-md-12">
+          <div className="navigation ui-menu">
+            <ul>
+              <div className="displayUl">
+                <li className=".nav-itemWrapper">
+                  <span>SHOP</span>
+                </li>
+              </div>
+              <div className="displayUl">
+                <li className=".nav-itemWrapper">
+                  <span className="nav-itemText">BIRTHDAY</span>
+                </li>
+              </div>
+              <div className="displayUl">
+                <li className=".nav-itemWrapper">
+                  <span className="nav-itemText">SYMPATHY</span>
+                </li>
+              </div>
+              <div className="displayUl">
+                <li className=".nav-itemWrapper">
+                  <span className="nav-itemText">OCASSION</span>
+                </li>
+              </div>
+              <div className="displayUl">
+                <li className=".nav-itemWrapper">
+                  <span className="nav-itemText">CUSTOM ARRANGMENT</span>
+                </li>
+              </div>
+              <div className="displayUl">
+                <li className=".nav-itemWrapper">
+                  <span className="nav-itemText">ABOUT US</span>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
         <img id="active-image_gallery-image" src={this.state.img}/>
        </div>
    );
