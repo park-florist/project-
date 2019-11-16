@@ -160,81 +160,86 @@ this["require"] =
 	      // }
 	      return React.createElement(
 	        'div',
-	        { className: '  float  order-container col-xs-12 col-sm-6 col-md-6' },
+	        null,
 	        React.createElement(
 	          'div',
-	          { id: 'orderForm' },
-	          React.createElement(
-	            'h1',
-	            { 'class': 'order-header', name: 'name' },
-	            this.state.name
-	          ),
-	          React.createElement('br', null),
+	          { className: ' up float  order-container col-xs-12 col-sm-6 col-md-6' },
 	          React.createElement(
 	            'div',
-	            { 'class': 'orderForm-arrangement_size' },
+	            { id: 'orderForm' },
+	            React.createElement(
+	              'h1',
+	              { 'class': 'order-header', name: 'name' },
+	              this.state.name
+	            ),
+	            React.createElement('br', null),
 	            React.createElement(
 	              'div',
-	              { className: 'paddingBut' },
-	              React.createElement(
-	                'h4',
-	                { 'class': 'orderForm-price modification_price js-price', id: 'h4' },
-	                '$',
-	                this.state.price1
-	              ),
+	              { 'class': 'orderForm-arrangement_size' },
 	              React.createElement(
 	                'div',
-	                { className: 'btn btn-large btn-order-size btn-order-size--standard col-xs-4 col-sm-4 col-md-4 col-lg-4 js-btnOrderSize', 'class': 'up-sell-list options-list price-size-box clearfix' },
+	                { className: 'text-align paddingBut' },
 	                React.createElement(
-	                  'button',
-	                  { className: 'btn', name: ' price1', id: 'standard', onClick: this.changeingone.bind(this) },
-	                  'Standard '
+	                  'h4',
+	                  { 'class': ' orderForm-price modification_price js-price', id: 'h4' },
+	                  '$',
+	                  this.state.price1
 	                ),
 	                React.createElement(
-	                  'button',
-	                  { className: 'btntwo', name: ' price2', id: 'deluxe', onClick: this.changeingtwo.bind(this) },
-	                  'Deluxe   '
-	                ),
-	                React.createElement(
-	                  'button',
-	                  { className: 'btntwo', name: ' price3', id: 'premium', onClick: this.changeingthree.bind(this) },
-	                  'Premium'
+	                  'div',
+	                  { className: ' btn btn-large btn-order-size btn-order-size--standard col-xs-4 col-sm-4 col-md-4 col-lg-4 js-btnOrderSize', 'class': 'up-sell-list options-list price-size-box clearfix' },
+	                  React.createElement(
+	                    'button',
+	                    { className: 'btn', name: ' price1', id: 'standard', onClick: this.changeingone.bind(this) },
+	                    'Standard '
+	                  ),
+	                  React.createElement(
+	                    'button',
+	                    { className: 'btntwo btn', name: ' price2', id: 'deluxe', onClick: this.changeingtwo.bind(this) },
+	                    'Deluxe   '
+	                  ),
+	                  React.createElement(
+	                    'button',
+	                    { className: 'btntwo btn', name: ' price3', id: 'premium', onClick: this.changeingthree.bind(this) },
+	                    'Premium'
+	                  )
 	                )
 	              )
 	            )
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'devdes' },
+	          ),
 	          React.createElement(
 	            'div',
-	            { className: 'up-sell', id: 'descrip' },
-	            'Bouquet will be delivered approximately as pictured.'
+	            { className: 'devdes' },
+	            React.createElement(
+	              'div',
+	              { className: 'up-sell', id: 'descrip' },
+	              'Bouquet will be delivered approximately as pictured.'
+	            ),
+	            React.createElement('br', null),
+	            React.createElement(
+	              'div',
+	              { className: 'up-selll' },
+	              'Add a zip code for delivery details'
+	            )
 	          ),
+	          React.createElement('br', null),
 	          React.createElement('br', null),
 	          React.createElement(
 	            'div',
-	            { className: 'up-selll' },
-	            'Add a zip code for delivery details'
-	          )
-	        ),
-	        React.createElement('br', null),
-	        React.createElement('br', null),
-	        React.createElement(
-	          'div',
-	          { className: 'dates' },
-	          React.createElement('input', { className: 'inputs', placeholder: 'CHOOSE A DELIVERY DATE', type: 'text', onFocus: this.changeType.bind(this) })
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'dates' },
+	            { className: 'dates' },
+	            React.createElement('input', { className: 'inputs', placeholder: 'CHOOSE A DELIVERY DATE', type: 'text', onFocus: this.changeType.bind(this) })
+	          ),
 	          React.createElement(
-	            'button',
-	            { className: 'colorbtn' },
-	            'Order Now'
+	            'div',
+	            { className: 'dates' },
+	            React.createElement(
+	              'button',
+	              { className: 'colorbtn' },
+	              'Order Now'
+	            )
 	          )
-	        )
+	        ),
+	        React.createElement('div', null)
 	      );
 	    }
 	  }]);

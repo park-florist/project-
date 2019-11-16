@@ -314,7 +314,11 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement('img', { id: 'active-image_gallery-image', src: this.state.img })
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'photo' },
+	          _react2.default.createElement('img', { className: ' nn', id: 'active-image_gallery-image', src: this.state.img })
+	        )
 	      );
 	    }
 	  }]);

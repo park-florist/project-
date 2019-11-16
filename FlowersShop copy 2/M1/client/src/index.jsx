@@ -177,7 +177,10 @@ class Flowers4001 extends React.Component {
             </ul>
           </div>
         </div>
-        <img id="active-image_gallery-image" src={this.state.img}/>
+        <div className="photo">
+<img  className =" nn"id="active-image_gallery-image" src={this.state.img}/>
+        </div>
+        
        </div>
    );
  }

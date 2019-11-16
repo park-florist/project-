@@ -1,7 +1,7 @@
  .order-container{
     position: relative;
     min-height: 1px;
-    max-width: 650px;
+    max-width: 580px;
     padding-left: 15px;
     padding-right: 15px;
     box-sizing: border-box;
@@ -33,9 +33,12 @@ h1{
     text-align: center;
     
 } 
+.sub{
+  padding-bottom: 15px;
+}
 .up-sell-list {
-    padding: 0;
-    margin: 0;
+
+     margin: 0;
     margin-top: 6px;
 }
 h4{
@@ -63,7 +66,6 @@ h4{
     cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
-  
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
@@ -76,7 +78,8 @@ h4{
     font-size: 16px;
     font-weight: 200 !important;
     color: #999;
-
+box-shadow: inset 2px 2px #548f35, inset -2px -2px #548f35;
+width: 153px;
 }
  .paddingBut{
  padding: 6px 12px;
@@ -206,6 +209,14 @@ body{
     color: #444;
     border: 1px solid #aaa;
   }
+
+
+  .item {
+    background-color: #fff;
+    color: #444;
+    border: 1px solid #aaa;
+  }   
+
   img {
     vertical-align: middle;
   
@@ -260,6 +271,11 @@ body{
     margin: 20px 0 20px 0;
     padding: 15px;
   }
+  .description {
+    margin: 20px 0 20px 0;
+    padding: 15px;
+  }
+
   .productInfo-storyIcons {
     text-transform: capitalize;
     text-align: center;
@@ -283,7 +299,7 @@ body{
 }
 */
     .row {
-        max-width: 650px;
+        max-width: 550px;
         margin: 0 auto;
         float: left;
     }
@@ -377,7 +393,8 @@ body{
   }
    #active-image_gallery-image{
     background: #EFEFEF;
-    width: 50%
+    width: 40%;
+    margin-left: 65px
   
    }
   
@@ -401,4 +418,27 @@ float:right;
  border: 1px solid #aaa;
  /* padding: 0 0 0 800px; */
 
+}
+.up{
+  margin-top: -390px;
+    width: 560;
+  
+}
+
+.firsting {
+  display: inline-block;
+ 
+}
+.seconding {
+ 
+  display: inline-block;
+}
+
+.nn{
+  margin-bottom: -30px;
+}
+
+
+.photo{
+padding: 3;
 }
