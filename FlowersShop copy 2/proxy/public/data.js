@@ -16,6 +16,9 @@ db.once("connected", function() {
  
 });
 let FlowerSchema = Schema ({
+    id:{
+        type : Number,
+    },
   name:{
       type : String,
       required : true

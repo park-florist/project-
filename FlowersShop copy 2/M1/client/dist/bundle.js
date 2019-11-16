@@ -211,9 +211,108 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'helloo agaaiinn 4001!!'
+	          'section',
+	          { id: '#header' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row header-innerContainer ' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: ' clearfix company-logo companylogo-img col-xs-12 col-sm-4 col-md-4' },
+	              _react2.default.createElement('img', { src: 'https://res.cloudinary.com/bloomnation/c_fit,f_auto,h_1000,q_auto,w_1000/v1/vendor/6263/profile/p/a/parkflorist-logo_2.png' })
+	            )
+	          ),
+	          " "
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'displayUl header-nav col-md-12' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'navigation ui-menu' },
+	            _react2.default.createElement(
+	              'ul',
+	              null,
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'displayUl' },
+	                _react2.default.createElement(
+	                  'li',
+	                  { className: '.nav-itemWrapper' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    'SHOP'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'displayUl' },
+	                _react2.default.createElement(
+	                  'li',
+	                  { className: '.nav-itemWrapper' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'nav-itemText' },
+	                    'BIRTHDAY'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'displayUl' },
+	                _react2.default.createElement(
+	                  'li',
+	                  { className: '.nav-itemWrapper' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'nav-itemText' },
+	                    'SYMPATHY'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'displayUl' },
+	                _react2.default.createElement(
+	                  'li',
+	                  { className: '.nav-itemWrapper' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'nav-itemText' },
+	                    'OCASSION'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'displayUl' },
+	                _react2.default.createElement(
+	                  'li',
+	                  { className: '.nav-itemWrapper' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'nav-itemText' },
+	                    'CUSTOM ARRANGMENT'
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'displayUl' },
+	                _react2.default.createElement(
+	                  'li',
+	                  { className: '.nav-itemWrapper' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'nav-itemText' },
+	                    'ABOUT US'
+	                  )
+	                )
+	              )
+	            )
+	          )
 	        ),
 	        _react2.default.createElement('img', { id: 'active-image_gallery-image', src: this.state.img })
 	      );

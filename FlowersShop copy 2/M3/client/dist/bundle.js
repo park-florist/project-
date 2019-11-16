@@ -81,34 +81,37 @@ this["require"] =
 	    var _this = _possibleConstructorReturn(this, (Flowers4003.__proto__ || Object.getPrototypeOf(Flowers4003)).call(this, props));
 	
 	    _this.state = {
-	      dataItem: []
-	      // productName: '',
+	      id: "",
+	      productInformation: ""
 	    };
-	    _this.getInfo();
+	    // this.getInfo();
 	    // this.getInfo = this.getInfo.bind(this);
 	
-	    _this.updateState = _this.updateState.bind(_this);
+	    // this.updateState = this.updateState.bind(this);
 	    return _this;
 	  }
 	
 	  _createClass(Flowers4003, [{
-	    key: "updateState",
-	    value: function updateState(data) {
-	      this.setState({
-	        dataItem: data
-	      });
-	    }
-	  }, {
-	    key: "getInfo",
-	    value: function getInfo() {
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
 	      var that = this;
+	
+	      var path = window.location.href;
+	      console.log(path);
+	      var productInformationID = path.substring(path.indexOf("=") + 1);
+	      if (productInformationID === "") {
+	        productInformationID = 1;
+	      }
 	      _jquery2.default.ajax({
 	        type: "GET",
-	        url: "/items",
+	        url: "/id/?id=" + productInformationID,
 	        success: function success(data) {
-	          that.updateState(data);
 	          console.log(data);
-	          console.log("productdata from getInfo");
+	          that.setState({
+	            id: data.id,
+	            productInformation: data.productInformation
+	          });
+	          console.log(that.state);
 	        },
 	        error: function error(_request, _status, _error) {
 	          console.log(_error);
@@ -118,113 +121,10 @@ this["require"] =
 	  }, {
 	    key: "render",
 	    value: function render() {
+	      console.log("inside getInfo M3");
 	      return _react2.default.createElement(
 	        "div",
 	        null,
-	        _react2.default.createElement(
-	          "section",
-	          { id: "#header" },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "row header-innerContainer " },
-	            _react2.default.createElement(
-	              "div",
-	              { className: " clearfix company-logo companylogo-img col-xs-12 col-sm-4 col-md-4" },
-	              _react2.default.createElement("img", { src: "https://res.cloudinary.com/bloomnation/c_fit,f_auto,h_1000,q_auto,w_1000/v1/vendor/6263/profile/p/a/parkflorist-logo_2.png" })
-	            )
-	          ),
-	          " "
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "displayUl header-nav col-md-12" },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "navigation ui-menu" },
-	            _react2.default.createElement(
-	              "ul",
-	              null,
-	              _react2.default.createElement(
-	                "div",
-	                { className: "displayUl" },
-	                _react2.default.createElement(
-	                  "li",
-	                  { className: ".nav-itemWrapper" },
-	                  _react2.default.createElement(
-	                    "span",
-	                    null,
-	                    "SHOP"
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "displayUl" },
-	                _react2.default.createElement(
-	                  "li",
-	                  { className: ".nav-itemWrapper" },
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "nav-itemText" },
-	                    "BIRTHDAY"
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "displayUl" },
-	                _react2.default.createElement(
-	                  "li",
-	                  { className: ".nav-itemWrapper" },
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "nav-itemText" },
-	                    "SYMPATHY"
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "displayUl" },
-	                _react2.default.createElement(
-	                  "li",
-	                  { className: ".nav-itemWrapper" },
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "nav-itemText" },
-	                    "OCASSION"
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "displayUl" },
-	                _react2.default.createElement(
-	                  "li",
-	                  { className: ".nav-itemWrapper" },
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "nav-itemText" },
-	                    "CUSTOM ARRANGMENT"
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "displayUl" },
-	                _react2.default.createElement(
-	                  "li",
-	                  { className: ".nav-itemWrapper" },
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "nav-itemText" },
-	                    "ABOUT US"
-	                  )
-	                )
-	              )
-	            )
-	          )
-	        ),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "productView row" },
@@ -295,11 +195,11 @@ this["require"] =
 	            _react2.default.createElement(
 	              "div",
 	              { className: "product-description--mobile js-description" },
-	              this.state.dataItem.length ? _react2.default.createElement(
+	              _react2.default.createElement(
 	                "p",
 	                null,
-	                this.state.dataItem[0].productInfo
-	              ) : null
+	                this.state.productInformation
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(

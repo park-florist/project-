@@ -5,82 +5,44 @@ class Flowers4003 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataItem: []
-      // productName: '',
+      id: "",
+      productInformation: ""
     };
-    this.getInfo();
+    // this.getInfo();
     // this.getInfo = this.getInfo.bind(this);
 
-    this.updateState = this.updateState.bind(this);
+    // this.updateState = this.updateState.bind(this);
   }
-  updateState(data) {
-    this.setState({
-      dataItem: data
-    });
-  }
-
-  getInfo() {
+  componentDidMount() {
     var that = this;
+
+    var path = window.location.href;
+    console.log(path);
+    var productInformationID = path.substring(path.indexOf("=") + 1);
+    if (productInformationID === "") {
+      productInformationID = 1;
+    }
     $.ajax({
       type: "GET",
-      url: "/items",
+      url: "/id/?id=" + productInformationID,
       success: function(data) {
-        that.updateState(data);
         console.log(data);
-        console.log("productdata from getInfo");
+        that.setState({
+          id: data.id,
+          productInformation: data.productInformation
+        });
+        console.log(that.state);
       },
       error: function(_request, _status, error) {
         console.log(error);
       }
     });
   }
-
   render() {
+    console.log("inside getInfo M3");
     return (
       <div>
-        <section id="#header">
-          <div className="row header-innerContainer ">
-            <div className=" clearfix company-logo companylogo-img col-xs-12 col-sm-4 col-md-4">
-              <img src="https://res.cloudinary.com/bloomnation/c_fit,f_auto,h_1000,q_auto,w_1000/v1/vendor/6263/profile/p/a/parkflorist-logo_2.png" />
-            </div>
-          </div>{" "}
-        </section>
-        <div className="displayUl header-nav col-md-12">
-          <div className="navigation ui-menu">
-            <ul>
-              <div className="displayUl">
-                <li className=".nav-itemWrapper">
-                  <span>SHOP</span>
-                </li>
-              </div>
-              <div className="displayUl">
-                <li className=".nav-itemWrapper">
-                  <span className="nav-itemText">BIRTHDAY</span>
-                </li>
-              </div>
-              <div className="displayUl">
-                <li className=".nav-itemWrapper">
-                  <span className="nav-itemText">SYMPATHY</span>
-                </li>
-              </div>
-              <div className="displayUl">
-                <li className=".nav-itemWrapper">
-                  <span className="nav-itemText">OCASSION</span>
-                </li>
-              </div>
-              <div className="displayUl">
-                <li className=".nav-itemWrapper">
-                  <span className="nav-itemText">CUSTOM ARRANGMENT</span>
-                </li>
-              </div>
-              <div className="displayUl">
-                <li className=".nav-itemWrapper">
-                  <span className="nav-itemText">ABOUT US</span>
-                </li>
-              </div>
-            </ul>
-          </div>
-        </div>
+     
         <div className="productView row">
           <div className="productInfo-item productInfo-description text-align col-xl-12">
             <div className="display">
@@ -108,9 +70,7 @@ class Flowers4003 extends React.Component {
           <div className="productInfo-item row productInfo-description col-xl-12">
             <h3>Product Information</h3>
             <div className="product-description--mobile js-description">
-              {this.state.dataItem.length ? (
-                <p>{this.state.dataItem[0].productInfo}</p>
-              ) : null}
+         <p>{this.state.productInformation}</p>         
             </div>
           </div>
           <div className="productInfo-item productInfo-description  col-xl-12">

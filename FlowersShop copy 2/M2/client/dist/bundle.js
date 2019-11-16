@@ -160,40 +160,48 @@ this["require"] =
 	      // }
 	      return React.createElement(
 	        'div',
-	        { className: 's' },
-	        React.createElement(
-	          'h1',
-	          { name: 'name' },
-	          this.state.name
-	        ),
-	        React.createElement('br', null),
+	        { className: '  float  order-container col-xs-12 col-sm-6 col-md-6' },
 	        React.createElement(
 	          'div',
-	          null,
+	          { id: 'orderForm' },
 	          React.createElement(
-	            'h4',
-	            { id: 'h4' },
-	            '$',
-	            this.state.price1
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'devdes' },
-	          React.createElement(
-	            'button',
-	            { className: 'btn', name: ' price1', id: 'standard', onClick: this.changeingone.bind(this) },
-	            'Standard '
+	            'h1',
+	            { 'class': 'order-header', name: 'name' },
+	            this.state.name
 	          ),
+	          React.createElement('br', null),
 	          React.createElement(
-	            'button',
-	            { className: 'btntwo', name: ' price2', id: 'deluxe', onClick: this.changeingtwo.bind(this) },
-	            'Deluxe   '
-	          ),
-	          React.createElement(
-	            'button',
-	            { className: 'btntwo', name: ' price3', id: 'premium', onClick: this.changeingthree.bind(this) },
-	            'Premium'
+	            'div',
+	            { 'class': 'orderForm-arrangement_size' },
+	            React.createElement(
+	              'div',
+	              { className: 'paddingBut' },
+	              React.createElement(
+	                'h4',
+	                { 'class': 'orderForm-price modification_price js-price', id: 'h4' },
+	                '$',
+	                this.state.price1
+	              ),
+	              React.createElement(
+	                'div',
+	                { className: 'btn btn-large btn-order-size btn-order-size--standard col-xs-4 col-sm-4 col-md-4 col-lg-4 js-btnOrderSize', 'class': 'up-sell-list options-list price-size-box clearfix' },
+	                React.createElement(
+	                  'button',
+	                  { className: 'btn', name: ' price1', id: 'standard', onClick: this.changeingone.bind(this) },
+	                  'Standard '
+	                ),
+	                React.createElement(
+	                  'button',
+	                  { className: 'btntwo', name: ' price2', id: 'deluxe', onClick: this.changeingtwo.bind(this) },
+	                  'Deluxe   '
+	                ),
+	                React.createElement(
+	                  'button',
+	                  { className: 'btntwo', name: ' price3', id: 'premium', onClick: this.changeingthree.bind(this) },
+	                  'Premium'
+	                )
+	              )
+	            )
 	          )
 	        ),
 	        React.createElement(
