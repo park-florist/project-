@@ -69,11 +69,12 @@ class Flowers4003 extends React.Component {
           </div>
           <div className="productInfo-item row productInfo-description col-xl-12">
             <h3>Product Information</h3>
-            <div className="product-description--mobile js-description">
+            <div className=" product-description--mobile js-description">
          <p>{this.state.productInformation}</p>         
             </div>
           </div>
-          <div className="productInfo-item productInfo-description  col-xl-12">
+          <div className= "sub">
+          <div className="item description  col-xl-12">
             <h3>Substitution Policy</h3>
             <div className="product-description--mobile js-description">
               <p>
@@ -84,7 +85,7 @@ class Flowers4003 extends React.Component {
                 Cornucopia Utopia! That is what Thanksgiving is all about. And
                 turkey, that’s important too.
               </p>
-            </div>
+            </div></div>
           </div>
         </div>
       </div>

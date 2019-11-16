@@ -194,7 +194,7 @@ this["require"] =
 	            ),
 	            _react2.default.createElement(
 	              "div",
-	              { className: "product-description--mobile js-description" },
+	              { className: " product-description--mobile js-description" },
 	              _react2.default.createElement(
 	                "p",
 	                null,
@@ -204,19 +204,23 @@ this["require"] =
 	          ),
 	          _react2.default.createElement(
 	            "div",
-	            { className: "productInfo-item productInfo-description  col-xl-12" },
-	            _react2.default.createElement(
-	              "h3",
-	              null,
-	              "Substitution Policy"
-	            ),
+	            { className: "sub" },
 	            _react2.default.createElement(
 	              "div",
-	              { className: "product-description--mobile js-description" },
+	              { className: "item description  col-xl-12" },
 	              _react2.default.createElement(
-	                "p",
+	                "h3",
 	                null,
-	                "A horn of corn has been born! We all love popcorn. Corn mazes delight and amuse us. We eat corn syrup. Corn is a part of all of our lives. This Thanksgiving, say \u201Cthanks\u201D to corn with this beautiful seasonal centerpiece. Cornbread, ears of corn, and a Cornucopia Utopia! That is what Thanksgiving is all about. And turkey, that\u2019s important too."
+	                "Substitution Policy"
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "product-description--mobile js-description" },
+	                _react2.default.createElement(
+	                  "p",
+	                  null,
+	                  "A horn of corn has been born! We all love popcorn. Corn mazes delight and amuse us. We eat corn syrup. Corn is a part of all of our lives. This Thanksgiving, say \u201Cthanks\u201D to corn with this beautiful seasonal centerpiece. Cornbread, ears of corn, and a Cornucopia Utopia! That is what Thanksgiving is all about. And turkey, that\u2019s important too."
+	                )
 	              )
 	            )
 	          )

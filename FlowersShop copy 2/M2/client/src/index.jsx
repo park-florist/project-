@@ -81,18 +81,19 @@ class App extends React.Component {
     //  var  myData =this.state;
     // }
     return (
-  <div className="  float  order-container col-xs-12 col-sm-6 col-md-6"> 
+      <div>
+  <div className=" up float  order-container col-xs-12 col-sm-6 col-md-6"> 
   <div id="orderForm">
    <h1  class="order-header" name = "name" >{this.state.name}</h1>
     <br/>
     <div class="orderForm-arrangement_size">
    
-<div className="paddingBut">
-    <h4 class="orderForm-price modification_price js-price" id="h4">${this.state.price1}</h4>
-    <div className="btn btn-large btn-order-size btn-order-size--standard col-xs-4 col-sm-4 col-md-4 col-lg-4 js-btnOrderSize" class="up-sell-list options-list price-size-box clearfix" >
+<div className="text-align paddingBut">
+    <h4 class=" orderForm-price modification_price js-price" id="h4">${this.state.price1}</h4>
+    <div className=" btn btn-large btn-order-size btn-order-size--standard col-xs-4 col-sm-4 col-md-4 col-lg-4 js-btnOrderSize" class="up-sell-list options-list price-size-box clearfix" >
     <button className = "btn" name = " price1"  id ="standard" onClick={this.changeingone.bind(this)} >Standard </button>
-    <button className = "btntwo" name = " price2"  id ="deluxe" onClick={this.changeingtwo.bind(this)}>Deluxe   </button>
-    <button className="btntwo" name = " price3"  id ="premium" onClick={this.changeingthree.bind(this)}>Premium</button>
+    <button className = "btntwo btn" name = " price2"  id ="deluxe" onClick={this.changeingtwo.bind(this)}>Deluxe   </button>
+    <button className="btntwo btn" name = " price3"  id ="premium" onClick={this.changeingthree.bind(this)}>Premium</button>
     </div>
     </div>
     </div>
@@ -123,7 +124,11 @@ class App extends React.Component {
   
   
   
-  
+  </div>
+
+  <div>
+    
+  </div>
   </div>
 
 
